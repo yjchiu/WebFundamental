@@ -1,0 +1,85 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+a{
+    color : #4BF4EF;
+}
+p{
+    font-size : 14px;
+    color : #C4C7D5;
+}
+#wrapper{
+ width: 970px;
+ background-color: #1279A5;
+ margin: 0px auto;
+ padding: 10px;
+}
+#header{
+ height: 40px;
+ background-color: #DE163E;
+ margin-bottom: 15px;
+ border-radius: 10px;
+ padding: 15px;
+ 
+}
+#header h1{
+    
+    color: #C4C7D5;
+}
+#navigation{
+    width: 180px;
+    background-color: #43A19E;
+    display: inline-block;
+    border-radius: 10px;
+    vertical-align: top;
+    padding : 10px;
+   
+}
+#navigation h3{
+    color:#4BF4EF;
+}
+ul{
+    padding-left: 20px;
+    color:white;
+}
+
+#main_content{   
+    width: 720px;
+    background-color:#2A2E3B;
+    display: inline-block;
+    margin-left:15px;
+    padding:15px;
+    border-radius: 10px;
+}
+#main_content h2{
+    color : #C4C7D5;
+    margin-bottom: 5px;
+}
+/*#main_content p{
+    font-size : 14px;
+    color : #C4C7D5;
+}*/
+
+#main_content ul li{
+    margin-top: 5px;
+}
+
+span{
+    color: #6d80ce;
+}
+#footer{
+    height: 20px;
+    background-color: #6F737D;
+    border-radius: 10px;
+    margin-top:15px;
+    padding:15px;
+    
+}
+#footer h5{
+    color:#7D9CF0;
+}
+/*#footer a{
+    color: #4BF4EF;
+}*/

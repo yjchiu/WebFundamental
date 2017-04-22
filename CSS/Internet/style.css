@@ -1,0 +1,275 @@
+*{
+ margin: 0px;
+ padding: 0px;
+ font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+}
+
+#wrapper{
+    width : 960px;
+    height: 1080px;
+    margin: 0px auto;
+    
+    
+}
+
+#header{
+    width: 960px;
+    height: 115px;
+    
+}
+
+#subheader_1{
+    width: 960px;
+    height: 65px;
+    
+}
+
+#subheader_1 img{
+    width : 80px;
+    height: 80px;
+    /*margin-left: 50px;
+    margin-right: 320px;*/
+
+    display: inline-block;
+    vertical-align: top;
+}
+
+#subheader_1 h{
+    width : 300px;
+    height: 40px;
+    background-color: white;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 42px;
+    margin-top: 18px;
+    
+}
+
+#subheader_1 h span{
+    color: #598CBF;
+}
+#subheader_2{
+    width: 930px;
+    height: 40px;
+    font-size: 28px;
+    background:linear-gradient(#2F6DCB, #598CBF, #2F6DCB);
+    
+    padding-left: 30px;
+    padding-top: 10px;
+}
+
+#subheader_2 h.www{
+    width: 120px;
+    height: 30px;
+    color: white;
+}
+
+#navigation{
+    width: 200px;
+    height : 600px;
+    background-color: white;
+    padding: 30px 5px 0px 5px;;
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+#top_nav{
+    width: 180px;
+    height: 200px;
+    border-bottom: 2px solid silver;
+}
+
+#top_nav h4{
+    margin-bottom: 10px;
+}
+
+#top_nav h4 span{
+    color: red;
+}
+#top_nav p{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#top_nav p span{
+    color:#598CBF;
+}
+
+#top_nav button{
+    width: 170px;
+    height: 35px;
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    box-shadow: 3px 3px 2px gray;
+    font-size: 14px; 
+
+}
+
+#video{
+    background: linear-gradient(#518ECA, #426F9D);
+}
+
+#more{
+    background: linear-gradient(orange, #DB7918);
+}
+
+#bottom_nav{
+    height: 260px;
+    background-image: url("ad_background.png");
+    margin-top: 20px;
+    padding: 25px 15px 0px 15px;
+}
+
+#bottom_nav p{
+    font-size: 23px;
+    color:white;
+    text-align: center;
+    line-height: 28px;
+}
+
+#bottom_nav img{
+    width: 70px;
+   padding-left: 50px;
+   margin-bottom: 10px;
+}
+#bottom_nav button{
+    width: 170px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background: linear-gradient(#60DAED, #37C0D5);
+    box-shadow: 3px 3px 2px black;
+    
+}
+
+#sub_content{
+    width: 710px;
+    height: 800px;
+    margin-left: 20px;
+   
+    display: inline-block;
+    vertical-align: top;
+}
+
+#sub_content_top{
+    width: 725px;
+    height: 60px;
+    border-bottom: 1px solid gray;
+    /*padding-top: 10px;*/
+}
+
+#sub_content_top h3{
+    width: 80px;
+    height: 20px;
+    color: #598CBF;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#sub_content_top h3 img{
+    width: 20px; 
+    margin-top: 5px;
+    
+}
+
+#call{
+    width: 220px;
+    height: 50px;
+    display: inline-block;
+    margin-left: 420px;
+}
+#call img{
+    width: 50px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 4px;
+}
+
+#info{
+    width: 160px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+/*#info h{
+    font-size: 
+}*/
+#info h2{
+    color: #60DAED;
+}
+
+
+#sub_content_bottom{
+    width: 710px;
+    height: 800px;
+}
+#sub_content_bottom span.code{
+    color: #87E3F2;
+}
+#sub_content_bottom span.aaa{
+    font-weight: 900;
+}
+
+#sub_content_bottom h4{
+    width: 710px;
+    height: 25px;
+    color: #598CBF;
+    padding-top: 10px;
+}
+
+#sub_content_bottom h5{
+    width: 710px;
+    height: 20px;
+}
+
+#sub_content_bottom ul{
+    width: 650px;
+    height: 150px;
+    padding-left: 50px;
+}
+
+#sub_content_bottom img.client{
+    width: 240px;
+    
+    padding-left: 230px;
+}
+
+#sub_content_bottom ul.number{
+    list-style-type:decimal;
+}
+
+#the_big_three{
+    width: 660px;
+    height: 120px;
+    padding-top: 10PX;
+    margin-top: 10PX;
+    margin-left: 30px;
+    border-top: 5px solid #5DADEA;
+    border-left: 5px solid #5DADEA;
+    border-right: 5px solid #5DADEA;
+    box-shadow: 5px 0px 5px -5px black;
+
+}
+
+#the_big_three img.html{
+    width: 80px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;;
+}
+
+#big_three_paragraph{
+    width: 540px;
+    height: 100px;
+    display: inline-block;
+    margin-left: 20px;
+}
+#big_three_paragraph h3{
+    color: #598CBF;
+}
