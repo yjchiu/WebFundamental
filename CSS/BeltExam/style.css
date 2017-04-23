@@ -12,7 +12,7 @@
     
 }
 #header{
-    width: 930px;
+    width: 931px;
     height: 45px;
     background: linear-gradient(#F2F1F1,#D4D0D0,#F2F1F1);
     margin-bottom: 10px;
@@ -72,13 +72,13 @@
 }
 
 #main_content{
-    width: 930px;
+    width: 931px;
     height: 460px;
     margin-bottom: 20px;
 }
 
 #main_content img{
-    width: 930px;
+    width: 931px;
     height: 407px;
     display: block;
 }
