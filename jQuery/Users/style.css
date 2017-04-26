@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper{
+    width: 800px;
+    height: 500px;
+    margin: 0px auto;
+    
+}
+
+table{
+    width: 800px;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+th,td{
+    width: 140px;
+    text-align: center;
+}
+
+h1{
+    height: 60px;
+    border-bottom: 2px solid silver;
+    margin-bottom: 20px;
+
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+#button{
+    float: right;
+}

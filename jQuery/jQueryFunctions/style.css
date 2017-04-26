@@ -1,0 +1,35 @@
+*{
+    margin: 2px;
+}
+
+div{
+    width: 960px;
+    height: 300px;
+
+    border-bottom: 2px solid silver;
+}
+
+button{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+p{  
+    width: 960px;
+    height: 200px;
+    display: inline-block;
+}
+
+#slide_down_header{
+    display: none;
+}
+
+
+#fade_in_paragraph{
+    display: none;
+}
+
+.red{
+    background-color: lightblue;
+    color: red;
+}

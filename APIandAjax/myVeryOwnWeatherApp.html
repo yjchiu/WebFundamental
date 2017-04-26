@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html> 
+    <head>
+        <meta charset="utf-8">
+        <title>Weather Forecast App</title>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('form').submit(function() {
+                    $('#main_container').empty();
+                    var city = $('#city').val();
+                    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=b44068476bc1dfd07779ad782e13f5d2';
+                    $('#city').val('');
+                    // your code here (build up your url)
+                    $.get(url, function(res) {
+                        // your code here
+                        console.log(res);
+                        var html_str = '';
+                        html_str += '<h1>' + res.name + '</h1>';
+                        html_str += '<p>Temperature: ' + res.main.temp +'</p>';
+                        $('#main_container').append(html_str);
+                    }, 'json');
+                    // don't forget to return false so the page doesn't refresh
+    
+                    return false;
+                });
+            });
+        </script>
+        <style type="text/css"> 
+        #wrapper{
+            width: 500px;
+            height: 500px;
+            margin: 0px auto;
+            padding: 10px;
+            border: 1px solid silver;
+            border-radius: 3px;
+        }
+        form{
+            width: 960px;
+            height: 34px;
+            margin-bottom: 20px;
+        }
+        #city{
+            width: 180px;
+            height: 30px;
+            border: 1px solid silver;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+
+        }
+        .btn{
+            width: 120px;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid silver;
+            background-color: white;
+            display: inline-block;
+            margin-top: 2px;
+            font-weight: 600;
+
+        }
+        #main_container{
+            width: 500px;
+            height: 400px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <form> 
+                <input id="city" type="text" name="city_name" value="Enter the city">
+                <button class="btn">Search Weather</button>
+            </form>
+                <div id="main_container">
+
+                </div>
+        </div>
+    </body>    
+</html>

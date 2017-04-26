@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemon</title>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script>
+            var HTMLstring = "";
+            for(var i = 1; i < 152;i++){
+                HTMLstring += '<img id = "'+ i +'" src="http://pokeapi.co/media/img/' + i +'.png">'; 
+            }
+            $(document).ready(function(){
+
+                $('#img_container').append(HTMLstring);
+
+                $(document).on('click','img',function(){
+                    $('#info_container').empty();
+                    var addr = '';
+                    addr = 'http://pokeapi.co/api/v1/pokemon/' + $(this).attr('id') + '/';
+                    // console.log(typeof(addr));
+                    $.get(addr,function(res){
+                        console.log(res);
+                        var html_str = '';
+                        html_str += '<h3>' + res.name+'</h3>';
+                        html_str +=  '<img src="http://pokeapi.co/media/img/' +res.national_id+'.png">';
+                        html_str += '<h4> Types: </h4>';
+                        html_str += "<ul>"
+                        for(var i = 0; i < res.types.length; i++) {
+                            html_str += "<li>" + res.types[i].name + "</li>";
+                        }
+                        html_str += "</ul>";
+                        html_str += '<h4> Height: </h4>';
+                        html_str += '<p>' + res.height + '</p>';
+                        html_str += '<h4> Weight: </h4>';
+                        html_str += '<p>' + res.weight + '</p>';
+                        
+                        $('#info_container').append(html_str);
+
+                    },"json");
+                });
+            });
+        </script>
+
+        <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrapper{
+            width: 1200px;
+        }
+        #img_container{
+            width: 960px;
+            display: inline-block;
+            vertical-align: top; 
+        }
+        #info_container{
+            display: inline-block;
+            width: 200px;
+            height: 360px;
+            border: 2px solid silver;
+        }
+        img{
+            width: 120px;
+            display: inline-block;
+        }
+
+        h3,h4{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #info_container img{
+            margin-left: 40px;
+        }
+        p{
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        ul{
+            padding-left: 40px;
+            margin-bottom: 10px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="img_container">
+            </div>
+            <div id="info_container"></div>
+        </div>
+    </body>
+</html>

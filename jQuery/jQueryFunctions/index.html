@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery Functions</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                // $('h1').click(function(){
+                //     alert('you click the button');
+                // })
+
+                // $('.hide_button').click(function(){
+                //     $('p').hide();
+                // })
+                // $('.show_button').click(function(){
+                //     $('p').show();
+                // })
+                $('.toggle_button').click(function(){
+                    $('p').toggle(1000,function(){
+                        $('button').css('background-color','lightblue');
+                    });
+                })
+
+                $('.slide_down_button').click(function(){
+                    if($("#slide_down_header").is(":hidden")){
+                        $( "#slide_down_header" ).slideDown( "slow" );
+                    }else{
+                        $("div").hide();
+                    }
+                    
+                })
+                $('.slide_up_button').click(function(){
+                    if(!$("#slide_up_header").is(":hidden")){
+                        $( "#slide_up_header" ).slideUp( "fast" );
+                    }else{
+                        $("div").hide();
+                    }
+                    
+                })
+                $('.slide_toggle_button').click(function(){
+                    $('p').slideToggle(100);      
+                })
+                $('.fade_in_button').click(function(){
+                    $('p').fadeIn(2000);      
+                })
+                $('.fade_out_button').click(function(){
+                    $('#fade_out_paragraph').fadeOut(2000);      
+                })
+                $('.add_class_button').click(function(){
+                    $('p').addClass('red');      
+                })
+
+                $('.before_button').click(function(){
+                    $('#before_paragraph').before("<h6>before content</h6>");
+                })
+                $('.after_button').click(function(){
+                    $('#after_paragraph').after("<h6>after content</h6>");
+                })
+                $('.append_button').click(function(){
+                    $('#append_paragraph').append("<h6>append content</h6>");
+                })
+                $('#html_paragraph').click(function(){
+                    // var htmlString = $(this).html();
+                    // $(this).text(htmlString);
+                    $(this).html("<h3>html content</h3>");
+                })
+            })
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>Click</h1>
+            <button>Click Button</button>
+            <p>Click the button</p>
+        </div>
+        <div>
+            <h1>Hide</h1>
+            <button class="hide_button">Hide Button</button>
+            <p id="paragraph_hidded">Click the button to hide the paragraph.</p>
+        </div>
+        <div>
+            <h1>Show</h1>
+            <button class="show_button">Show Button</button>
+            <p>Click the button to hide the paragraph.</p>
+        </div>
+        <div>
+            <h1>Toggle</h1>
+            <button class="toggle_button">Toggle Button</button>
+            <p>Click the button to hide the paragraph.</p>
+        </div>
+        <div>
+            <h1 id="slide_down_header">Slide Down</h1>
+            <button class="slide_down_button">Slide Down Button</button>
+            <p>Click the button to slide down the paragraph.</p>
+        </div>
+        <div>
+            <h1 id="slide_up_header">Slide Up</h1>
+            <button class="slide_up_button">Slide Up Button</button>
+            <p>Click the button to slide up the paragraph.</p>
+        </div>
+        <div>
+            <h1>Slide Toggle</h1>
+            <button class="slide_toggle_button">Slide Toggle Button</button>
+            <p>Click the button to toggle the paragraph.</p>
+        </div>
+        <div>
+            <h1 >Fade In</h1>
+            <button class="fade_in_button">Fade In Button</button>
+            <p id="fade_in_paragraph">Click the button to fade in the paragraph.</p>
+        </div>
+
+        <div>
+            <h1 >Fade Out</h1>
+            <button class="fade_out_button">Fade Out Button</button>
+            <p id="fade_out_paragraph">Click the button to fade out the paragraph.</p>
+        </div>
+        <div>
+            <h1 >Add Class</h1>
+            <button class="add_class_button">Add Class Button</button>
+            <p>Click the button to add class 'red' to this paragraph.</p>
+        </div>
+        <div>
+            <h1 >Before</h1>
+            <button class="before_button">Before Button</button>
+            <p id="before_paragraph">Click the button to insert content to this paragraph.</p>
+        </div>
+        <div>
+            <h1 >After</h1>
+            <button class="after_button">After Button</button>
+            <p id="after_paragraph">Click the button to insert content after this paragraph.</p>
+        </div>
+        <div>
+            <h1 >Append</h1>
+            <button class="append_button">Append Button</button>
+            <p id="append_paragraph">Click the button to append content after this paragraph.</p>
+        </div>
+        <div>
+            <h1 >Html</h1>
+            <button class="html_button">Html Button</button>
+            <p id="html_paragraph">Click the button to append content after this paragraph.</p>
+        </div>
+        <div>
+            <h1 >Attr</h1>
+            <button class="html_button">Html Button</button>
+            <p id="html_paragraph">Click the button to append content after this paragraph.</p>
+        </div>
+    </body>
+</html>

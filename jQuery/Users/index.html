@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+        // function attach(first_name,last_name,email,contact_num){
+        //     $('table').append("<tr> <td>" + first_name + "</td><td>"+ last_name + "</td><td>" + email + "</td><td>"+contact_num + "</td></tr>");
+        // }
+            $(document).ready(function(){
+                console.log('Hello');
+                $('#button').click(function(){
+                    var first_name = $('#first_name').val();
+                    var last_name = $('#last_name').val();
+                    var email = $('#email').val();
+                    var contact_num = $('#contact').val();
+                    $('table').append("<tr> <td>" + first_name + "</td><td>"+ last_name + "</td><td>" + email + "</td><td>"+contact_num + "</td></tr>");
+                    // attach(first_name,last_name,email,contact_num);
+                    return false;
+                })
+                
+
+
+            })
+        </script>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact#</th>
+                </tr>
+        </table>
+        <h1>Add User</h1>
+        <form>    
+            <label>First Name:<input id="first_name" type="text" name="first_name" value="First Name"></label>
+            <label>Last Name:<input id="last_name" type="text" name="last_name" value="Last Name"></label>
+            <label>Email Address:<input id="email" type="email" name="email_addr" value="Email Address"></label>
+            <label>Contact Number:<input  id="contact" type="text" name="contact" value="Phone #"></label>
+            <input id="button" type="submit" value="Submit">
+        </form>
+
+        </div>
+    </body>
+</html>
