@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pacman Demo</title>
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script type="text/javascript">
+            var world = [
+                [2,2,2,2,2,2,2,2,2,2,2],
+                [2,0,1,1,1,1,2,1,1,1,2],
+                [2,1,1,1,2,1,1,1,1,1,2],
+                [2,1,1,1,2,1,1,1,1,1,2],
+                [2,1,1,1,2,2,2,2,1,1,2],
+                [2,1,1,1,1,1,1,1,1,1,2],
+                [2,1,4,1,1,1,1,2,3,1,2],
+                [2,1,1,1,1,1,1,1,1,1,2],
+                [2,1,1,2,2,2,1,1,1,1,2],
+                [2,1,1,1,1,2,1,1,1,1,2],
+                [2,2,2,2,2,2,2,2,2,2,2]
+            ];
+
+            function displayPlayground(){
+                var html_str = '';
+                for(var i = 0 ; i < world.length;i++){
+                    html_str += '<div class = "row">\n';
+                    for(var j = 0; j < world[i].length;j++){
+                        if(world[i][j]==4)
+                            html_str += '<div class="ghost"></div>';
+                        if(world[i][j]==3)
+                            html_str += '<div class="cherry"></div>';
+                        if(world[i][j]==2)
+                            html_str += '<div class="brick"></div>';
+                        if(world[i][j]==1)
+                            html_str += '<div class="coin"></div>';
+                        if(world[i][j]==0)
+                            html_str +='<div class="empty"></div>';
+                        
+                    }
+                    html_str += '</div>\n';
+                }
+                $('#world').html(html_str);
+            }
+            var score = 0;    
+            var pacman = {
+                x: 1,
+                y: 1
+            }
+            function displayScore(){
+                $('.score').html(score);
+            }
+            function displayPacman(){
+                // console.log($('.pacman').css('top'));
+                $(document).on('keydown',function(e){
+
+                    if(e.which == 39 && world[pacman.y][pacman.x+1] != 2){
+                        console.log(pacman.y + ' ' +pacman.x);
+                        pacman.x++;
+                        var pos = pacman.x*20+'px';
+                        $('.pacman').css('left',pos);
+                    }
+                    if(e.which == 37 && world[pacman.y][pacman.x-1] != 2){
+                        pacman.x--;
+                        var pos = pacman.x*20+'px';
+                        $('.pacman').css('left',pos);
+                    }
+                    if(e.which == 40 && world[pacman.y+1][pacman.x] != 2){
+                        pacman.y++;
+                        var pos = pacman.y*20+'px';
+                        $('.pacman').css('top',pos);
+                    }
+
+                    if(e.which == 38 && world[pacman.y-1][pacman.x] != 2){
+                        pacman.y--;
+                        var pos = pacman.y*20+'px';
+                        $('.pacman').css('top',pos);
+                    }
+                    if(world[pacman.y][pacman.x] == 1){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 10;
+                         displayPlayground();
+                        displayScore();
+                    }
+                    else if(world[pacman.y][pacman.x] == 3){
+                        world[pacman.y][pacman.x] = 0;
+                        score += 50;
+                        displayPlayground();
+                        displayScore();
+                    }
+                    else if(world[pacman.y][pacman.x] == 4){
+                        $('.pacman').remove();
+
+                    }
+                    
+                        
+                })
+
+                // $('.pacman').css('top','20px');
+            }
+
+            $(document).ready(function(){
+                displayPlayground();
+                displayPacman();
+                // $(document).on('keydown',function(e){
+                //     console.log(e);
+                // })
+                // document.onkeydown = function(e){
+                //     console.log(e);
+                // }
+             })
+        
+        
+        
+        
+        </script>
+        <style type="text/css">
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: black;
+            
+        }
+        #world{
+            width: 220px;
+            height: 220px;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+        }
+        div.row{
+            height: 20px;
+        }
+        div.row div{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 0px;
+        }
+        div.brick{
+            background-color: blue;
+        }
+        div.coin{
+            background: url('coin.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .pacman{
+            background: url('pacman.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
+        div.cherry{
+            background: url('cherry.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        div.ghost{
+            background: url('ghost.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            
+        }
+
+        div.score{
+            width: 40px;
+            height: 40px;
+            border: 1px solid white;
+            color: white;
+            text-align: center;
+            display: inline-block;
+            
+        }
+         div.empty{
+            
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div id="world"></div>
+
+        <div class="pacman" style="top:20px; left:20px;"></div>
+        <div class="score">0</div>
+        <!--<div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>
+        
+        <div class="row">
+            <div class="brick"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="brick"></div>
+            <div class="coin"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="pacman"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="coin"></div>
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <div class="coin"></div>
+            <div class="brick"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="coin"></div>
+            <div class="brick"></div>
+        </div>
+        <div class="row">
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+            <div class="brick"></div>
+        </div>-->
+
+    </body>
+</html>
